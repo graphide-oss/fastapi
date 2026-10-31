@@ -61,6 +61,16 @@ jobs:
           - starlette-git
         include:
           - os: ubuntu-latest
+            python-version: "3.10"
+            coverage: coverage
+            uv-resolution: lowest-direct
+            deprecated-tests: "no-deprecation"
+          - os: ubuntu-latest
+            python-version: "3.12"
+            coverage: coverage
+            uv-resolution: lowest-direct
+            deprecated-tests: "no-deprecation"
+          - os: ubuntu-latest
             python-version: "3.13"
             coverage: coverage
             uv-resolution: highest
