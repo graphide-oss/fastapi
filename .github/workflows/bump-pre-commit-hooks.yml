@@ -10,7 +10,7 @@ permissions: {}
 jobs:
   bump-pre-commit-hooks:
     if: github.repository_owner == 'fastapi'
-    runs-on: ubuntu-latest
+    runs-on: graphide-linux-x64-4
     timeout-minutes: 10
     permissions:
       contents: read

@@ -9,7 +9,7 @@ permissions: {}
 
 jobs:
   smokeshow:
-    runs-on: ubuntu-latest
+    runs-on: graphide-linux-x64-4
     permissions:
       statuses: write
     timeout-minutes: 5
