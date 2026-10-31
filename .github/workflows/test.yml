@@ -17,7 +17,7 @@ env:
 
 jobs:
   changes:
-    runs-on: ubuntu-latest
+    runs-on: graphide-linux-x64-4
     # Required permissions
     permissions:
       pull-requests: read
@@ -100,7 +100,7 @@ jobs:
           - os: windows-latest
           - os: macos-latest
       fail-fast: false
-    runs-on: ubuntu-latest
+    runs-on: graphide-linux-x64-4
     env:
       UV_PYTHON: ${{ matrix.python-version }}
       UV_RESOLUTION: ${{ matrix.uv-resolution }}
@@ -162,7 +162,7 @@ jobs:
     needs:
       - changes
     if: needs.changes.outputs.src == 'true' || github.ref == 'refs/heads/master'
-    runs-on: ubuntu-latest
+    runs-on: graphide-linux-x64-4
     timeout-minutes: 10
     env:
       UV_PYTHON: "3.13"
@@ -201,7 +201,7 @@ jobs:
           run: uv run --no-sync pytest tests/memory_benchmarks --codspeed
 
   regression-test:
-    runs-on: ubuntu-latest
+    runs-on: graphide-linux-x64-4
     timeout-minutes: 10
     steps:
       - name: Check out the pull request
@@ -273,7 +273,7 @@ jobs:
   coverage-combine:
     needs:
       - test
-    runs-on: ubuntu-latest
+    runs-on: graphide-linux-x64-4
     timeout-minutes: 5
     steps:
       - name: Dump GitHub context
@@ -321,7 +321,7 @@ jobs:
       - coverage-combine
       - benchmark
       - regression-test
-    runs-on: ubuntu-latest
+    runs-on: graphide-linux-x64-4
     timeout-minutes: 5
     steps:
       - name: Dump GitHub context
