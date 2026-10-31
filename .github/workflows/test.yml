@@ -100,7 +100,7 @@ jobs:
           - os: windows-latest
           - os: macos-latest
       fail-fast: false
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     env:
       UV_PYTHON: ${{ matrix.python-version }}
       UV_RESOLUTION: ${{ matrix.uv-resolution }}
