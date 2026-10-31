@@ -20,7 +20,7 @@ permissions: {}
 
 jobs:
   prepare-release:
-    runs-on: ubuntu-latest
+    runs-on: graphide-linux-x64-4
     timeout-minutes: 5
     permissions:
       contents: read

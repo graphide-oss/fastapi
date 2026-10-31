@@ -40,7 +40,7 @@ permissions: {}
 
 jobs:
   langs:
-    runs-on: ubuntu-latest
+    runs-on: graphide-linux-x64-4
     outputs:
       langs: ${{ steps.show-langs.outputs.langs }}
       commands: ${{ steps.show-langs.outputs.commands }}
@@ -73,7 +73,7 @@ jobs:
   translate:
     if: github.repository_owner == 'fastapi'
     needs: langs
-    runs-on: ubuntu-latest
+    runs-on: graphide-linux-x64-4
     permissions:
       contents: read
       id-token: write

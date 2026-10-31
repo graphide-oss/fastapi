@@ -8,7 +8,7 @@ permissions: {}
 
 jobs:
   changes:
-    runs-on: ubuntu-latest
+    runs-on: graphide-linux-x64-4
     # Required permissions
     permissions:
       pull-requests: read
@@ -38,7 +38,7 @@ jobs:
     needs:
       - changes
     if: ${{ needs.changes.outputs.docs == 'true' }}
-    runs-on: ubuntu-latest
+    runs-on: graphide-linux-x64-4
     timeout-minutes: 5
     outputs:
       langs: ${{ steps.show-langs.outputs.langs }}
@@ -70,7 +70,7 @@ jobs:
       - changes
       - langs
     if: ${{ needs.changes.outputs.docs == 'true' }}
-    runs-on: ubuntu-latest
+    runs-on: graphide-linux-x64-4
     timeout-minutes: 7
     strategy:
       matrix:
@@ -120,7 +120,7 @@ jobs:
     needs:
       - langs
       - build-docs
-    runs-on: ubuntu-latest
+    runs-on: graphide-linux-x64-4
     steps:
       - name: Decide whether the needed jobs succeeded or failed
         uses: re-actors/alls-green@b5b5b37504aa4183270bd3d855c52a67f212be35 # v1.3.0
