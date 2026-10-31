@@ -10,7 +10,7 @@ permissions: {}
 jobs:
   topic-repos:
     if: github.repository_owner == 'fastapi'
-    runs-on: ubuntu-latest
+    runs-on: graphide-linux-x64-4
     permissions:
       contents: read
       id-token: write
